@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %} Social Site {% endblock %}
+
+{% block header %} Social Site {% endblock %}
+
+{% block top-action %}
+<h1>Social Site</h1>
+{% endblock %}
+
+{% block content %}
+
+<h2>Overview</h2>
+
+<h3>Description</h3>
+
+This is a social framework for a django site to allow authentication
+to facebook, twitter, Google Apps and linked in.  It was based on the
+... and expanded to be a more inclusive design.
+
+<h3>Dependencies</h3>
+
+<ul>
+  <li>Includes bluprint for css scripting</li>
+  <li>Built on django version ...</li>
+  <li>Built on python 2.7</li>
+</ul>
+
+<hr>
+
+<h2>Facebook Features</h2>
+
+<h3>Facebook Login</h3>
+<a href="/facebook/login" />/facebook/login</a> Allows user to
+authenticate against a facebook app and their account.  The app then
+loads the current list of the user's facebook friends.
+
+<h3>Facebook Friends</h3>
+<a href="/facebook/friends" />/facebook/friends</a> Lists the current
+update facebook friends stored in the facebook tables.
+
+<h2>Account Features</h2>
+
+
+
+{% endblock %}

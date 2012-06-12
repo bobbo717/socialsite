@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title>{% block title %}Shopping List{% endblock %}</title>
+<link rel="stylesheet" href="/static/css/blueprint/screen.css" type="text/css" media="screen, projection">
+<link rel="stylesheet" href="/static/css/blueprint/print.css" type="text/css" media="print">
+<!--[if lt IE 8]>
+  <link rel="stylesheet" href="/static/css/blueprint/ie.css" type="text/css" media="screen, projection">
+<![endif]--></code></pre>
+<link rel="stylesheet" href="/static/css/style.css" />
+</head>
+
+<body class="container">
+<div id="main-left" class="span-19">
+
+<div id="top-logo" class="span-2 last" align=middle>
+  <a href="/" />Home</a>
+</div>
+<div id="top-menu" class="span-17 last" align=middle>
+  {% block top-action %}
+  {% endblock %}
+</div>
+<div id="content" class="span-19 last">
+        {% block content %}{% endblock %}
+</div>
+</div>
+<div id="right-sidebar" class="span-4 last">
+  <div id="user-header" class="span-4 loud">
+    {% block user-header %}
+
+    {% if user.is_authenticated %}
+     <h4>{{ user.first_name }} {{ user.last_name }} <img src="http://graph.facebook.com/{{ user.get_profile.facebook_id }}/picture" width=20/></h4>
+     <h6><a href="/facebook/friends">Facebook friends</a></h6>
+    {% else %}
+    <h4><a href="/facebook/login">Login via Facebook</a></h4>
+    {% endif %}
+    {% endblock %}
+
+    </div>
+  <hr>
+    {% block sidebar %}
+  <h4>Your Crew</h4>
+    {% include "account/follows.html" %}
+  </ul>
+  <hr>
+  <h4>Your List</h4>
+  <table>
+    <tr>
+      <th>Item</th><th>Price</th>
+    </tr>
+    <tr><td>Milk</td><td>$3.95 Up</td>
+    <tr><td>Milk</td><td>$3.95 -</td>
+    <tr><td>Milk</td><td>$3.95 Down</td>
+    <tr><td>Milk</td><td>$3.95 -</td>
+    <tr><td>Milk</td><td>$3.95 -</td>
+    <tr><td>Milk</td><td>$3.95 Up</td>
+  </table>
+  <hr>
+  <h4>Activity | Public </h4>
+  <ul>
+    <li>bobbo717 just found strawberries for $1.99</li>
+    <li>Patti like potatoes for $0.99 a piund</li>
+    <li>Dude1 recommended Calvin Klein!</li>
+    <li>New Gap products have arrived</li>
+  </ul>
+  {% endblock %}
+</div>
+
+<div id="footer" class="span-24 last" align="middle">
+  {% block footer %}
+  About us | Careers
+  {% endblock %}
+</div>
+
+
+
+
+</body> </html>

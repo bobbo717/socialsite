@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %} PersonalShoppr - Facebook Friends {% endblock %}
+
+{% block header %} PersonalShoppr - Facebook Friends {% endblock %}
+
+{% block top-action %}
+<h1>Personal Shoppr - Facebook Friends</h1>
+{% endblock %}
+
+{% block content %}
+
+<table>
+  <thead>
+  <tr><th></th><th>Facebook Friend's Name</th><th>Invite</th><th>Follow</th></tr>
+  </thead>
+  {% for friend in facebook_friends %}
+  <tr><td><img src="http://graph.facebook.com/{{ friend.facebook_id }}/picture"/>{{ friend.user_name }}</td><td>{{ friend.name }}</td><td>Invite</td><td>Follow</td></tr>
+  {% endfor %}
+</table>
+ 
+{% endblock %}

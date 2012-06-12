@@ -1,0 +1,9 @@
+{% if follow_list %}
+    <ul>
+    {% for friend in follow_list %}
+        <li><a href="/account/{{ friend.following.id }}">{{ friend.following.first_name }} {{ friend.following.last_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No friends are available.</p>
+{% endif %}

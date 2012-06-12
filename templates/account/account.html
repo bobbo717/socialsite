@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %} PersonalShoppr - Facebook Friends {% endblock %}
+
+{% block header %} PersonalShoppr - Facebook Friends {% endblock %}
+
+{% block top-action %}
+<h1>Personal Shoppr - {{ u.first_name }} {{ u.last_name }}</h1>
+
+<h2><a href="/account/{{ user.id }}/follow/{{ u.id }}/" />Follow</a>
+
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
